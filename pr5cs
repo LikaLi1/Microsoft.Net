@@ -1,0 +1,112 @@
+using Proga;
+using System;
+
+namespace Proga
+{
+    abstract class Person
+    {
+        public string Name { get; set; }
+        public int Age { get; set; }
+
+        public Person(string name, int age)
+        {
+            Name = name;
+            Age = age;
+        }
+
+        public void ShowInfo()
+        {
+            Console.WriteLine($"Name: {Name}, Age: {Age}");
+        }
+
+        public void SayHello()
+        {
+            Console.WriteLine($"Say Hi, {Name}");
+        }
+    }
+
+    class Student : Person
+    {
+        public string University { get; set; }
+
+        public Student(string name, int age, string university)
+            : base(name, age)
+        {
+            University = university;
+        }
+
+        public void Study()
+        {
+            Console.WriteLine($"{Name}, studying for {Age}");
+        }
+    }
+
+    class Teacher : Person
+    {
+        public string Subject { get; set; }
+        public Teacher(string name, int age, string subject)
+            : base(name, age)
+        {
+            Subject = subject;
+        }
+        public void Teach()
+        {
+            Console.WriteLine($"{Name}, teaches {Subject}");
+        }
+    }
+
+    class Doctor : Person
+    {
+        public string Specialization { get; set; }
+        public Doctor(string name, int age, string specialization)
+            : base(name, age)
+        {
+            Specialization = specialization;
+        }
+
+        public void Treat()
+        {
+            Console.WriteLine($"{Name}, works for {Specialization}");
+        }
+    }
+
+    class Athlete : Person
+    {
+        public string Trophy { get; set; }
+        public Athlete(string name, int age, string subject)
+            : base(name, age)
+        {
+            Trophy = trophy;
+        }
+        public void Teach()
+        {
+            Console.WriteLine($"{Name}, earned {Trophy}");
+        }
+    }
+}
+
+class Prog
+{
+    static void Main()
+    {
+        Proga.Student student = new Proga.Student("Ivan", 20, "MBOY");
+        Proga.Teacher teacher = new Proga.Teacher("Anna", 40, "Mathematics");
+        Proga.Doctor doctor = new Proga.Doctor("Sergey", 50, "Cardiologist");
+        Proga.Athlete athlete = new Proga.Athlete("Sergey", 50, "1st");
+
+        Console.WriteLine("Student");
+        student.ShowInfo();
+        student.SayHello();
+        student.Study();
+
+        Console.WriteLine("Teacher");
+        teacher.ShowInfo();
+        teacher.SayHello();
+        teacher.Teach();
+
+        Console.WriteLine("Doctor");
+        doctor.ShowInfo();
+        doctor.SayHello();
+        doctor.Treat();
+    }
+}
