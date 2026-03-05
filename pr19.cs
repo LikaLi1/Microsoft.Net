@@ -74,8 +74,6 @@ namespace Proga
             {
                 Console.WriteLine($"{hero.Name} - Атака: {hero.Attack}");
             }
-
-            Console.WriteLine("\nЗадание выполнено!");
         }
     }
 }
